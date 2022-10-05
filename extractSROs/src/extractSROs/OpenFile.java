@@ -9,9 +9,9 @@ public class OpenFile {
 	//file must be placed on this path in order for the system to work 
 	static String pathWay = "\\Users\\gab54\\OneDrive\\Documents\\JavaPractice\\";
 	//this method receives the file name to be process 
-static void Open( String File_name) {
+static File Open( String File_name) {
 	pathWay += File_name; // added to the path
-	 File file = new File(pathWay);//Instantiate a file 
+	 File file = new File(pathWay);//Instantiate a file in local directory
 		if(!Desktop.isDesktopSupported()){
 	        System.out.println("Desktop is not supported");
 	    }
@@ -31,6 +31,8 @@ static void Open( String File_name) {
 	        System.out.println("File either not exist"
 	                           + " or can't open");//if the file can't be open
 	    }
+	 return file;
+	 
 	}
 }
 
