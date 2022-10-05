@@ -8,9 +8,10 @@ public class extractInfo {
 		public static void main(String[] arg) throws Exception{
 			Scanner Uinput = new Scanner(System.in);
 				System.out.println("Enter File's name:");
-					String File = Uinput.next();
+					String FileName = Uinput.next();
 		// Create a file input stream on specified path with the created file
-			FileInputStream fis = new FileInputStream(OpenFile.Open(File)); 
+					 File file =  ModifyFile.Open(FileName);
+			FileInputStream fis = new FileInputStream(file); 
 				System.out.println(fis.getChannel());
 				System.out.println(fis.getFD());
 				System.out.println("Number of remaining bytes:"
@@ -22,6 +23,8 @@ public class extractInfo {
 				while ((ch = fis.read()) != -1)
 		            System.out.print((char)ch);
 				 fis.close();
+				 ModifyFile.Close(FileName);
+				 
 		}
 	}
 

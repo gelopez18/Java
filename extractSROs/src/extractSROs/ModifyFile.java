@@ -1,11 +1,13 @@
 package extractSROs;
 
 import java.awt.Desktop;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class OpenFile {
+public class ModifyFile {
 	//file must be placed on this path in order for the system to work 
 	static String pathWay = "\\Users\\gab54\\OneDrive\\Documents\\JavaPractice\\";
 	//this method receives the file name to be process 
@@ -34,6 +36,10 @@ static File Open( String File_name) {
 	 return file;
 	 
 	}
+static void Close(String File_name) throws IOException {
+
+	}
+	
 }
 
 
