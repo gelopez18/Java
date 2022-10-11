@@ -38,6 +38,7 @@ public class DBconnect {
 			Connection connect = DriverManager.getConnection(url, uname, pwd);
 			Statement statement = connect.createStatement();
 			ResultSet result = statement.executeQuery(Tquery);
+			//Array Qresult = result;
 			while (result.next()) {
 				String Fo = "";
 				for (int i=1; i<=5;i++) {
@@ -45,12 +46,10 @@ public class DBconnect {
 				}
 				System.out.println(Fo);
 			}
-			
-			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 
 	}
 	
