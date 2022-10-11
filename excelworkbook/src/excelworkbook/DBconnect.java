@@ -22,7 +22,7 @@ public class DBconnect {
 			e.printStackTrace();
 		}
 		try {
-			String url ="jdbc:mysql://localhost:3306/fmdb";
+			String url ="jdbc:mysql://localhost:3306/userpractice";
 			Connection connect = DriverManager.getConnection(url, uname, pwd);
 		}catch(SQLException e) {
 			e.printStackTrace();
