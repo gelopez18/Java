@@ -12,10 +12,18 @@ public class dbManipulation {
 				String uName = UInput.nextLine();
 			System.out.println("Enter Password");
 				String Passw = UInput.nextLine();
+
+		DBconnect conn = new DBconnect(uName, Passw);
+		if(conn.connect()=="Connected to Database") {
+			System.out.println(conn.connect());
 			System.out.println("Enter Query");
 				String Query = UInput.nextLine();
-		DBconnect conn = new DBconnect(uName, Passw, Query);
-		System.out.println(conn.connect());
+			 conn.Query(Query);
+				
+		
+		}
+		
+		
 		
 	}
 }
