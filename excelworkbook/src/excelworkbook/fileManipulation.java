@@ -6,7 +6,7 @@ import java.io.IOException;
 public class fileManipulation {
 	String path = "\\Users\\gab54\\OneDrive\\Documents\\JavaPractice\\";
 
-	public boolean mkDir(String dirName) throws IOException {
+	public boolean mkFile(String dirName) throws IOException {
 		path += dirName;
 		File fileNm = new File(path);
 		boolean results = fileNm.createNewFile();

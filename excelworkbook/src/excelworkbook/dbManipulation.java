@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class dbManipulation {
 	public static void main(String[] arg) throws SQLException, IOException{
+			Object[][] results;
 		Scanner UInput = new Scanner(System.in);
 			System.out.println("Enter UserName");
 				String uName = UInput.nextLine();
@@ -20,11 +21,12 @@ public class dbManipulation {
 			System.out.println(conn.connect());
 			System.out.println("Enter Query");
 				String Query = UInput.nextLine();
-			 conn.Query(Query);
-			 conn.display();
+			conn.Query(Query);
+			results=conn.display();
 			 fileManipulation file = new fileManipulation();
 			 LocalDate date = LocalDate.now();
-			 	file.mkDir(uName+=date+".xls");
+			 	file.mkFile(uName+=date+".xls");
+			 	
 		
 		}
 		

@@ -9,6 +9,7 @@ public class DBconnect {
 	String uname;
 	String pwd;
 	String Tquery;
+	
 	ResultSet result;
 	public DBconnect(String uname, String pwd){
 		this.uname= uname;
@@ -39,24 +40,31 @@ public class DBconnect {
 			Connection connect = DriverManager.getConnection(url, uname, pwd);
 			Statement statement = connect.createStatement();
 			 result = statement.executeQuery(Tquery);
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 
-
 	}
 	
-	public void display() {
+	public Object[][] display() {
+		int rows = 0;
+		int columns = 0;
+		Object[][] resultSet = new Object[rows][columns];
+		int row = 0;
 		try {
 			while (result.next()) {
 				String Fo = "";
-				for (int i=1; i<=7;i++) {
+				for (int i=1; i<columns;i++) {
+					resultSet[row][i] = result.getObject(i+1);
 					Fo += result.getString(i)+ "\t\t";
 				}
+				row++;
 				System.out.println(Fo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return resultSet;
 	}
 }
