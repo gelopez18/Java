@@ -24,7 +24,7 @@ public class dbManipulation {
 			 conn.display();
 			 fileManipulation file = new fileManipulation();
 			 LocalDate date = LocalDate.now();
-			 	file.mkDir(uName+=date);
+			 	file.mkDir(uName+=date+".xls");
 		
 		}
 		
