@@ -9,6 +9,7 @@ public class DBconnect {
 	String uname;
 	String pwd;
 	String Tquery;
+	ResultSet result;
 	public DBconnect(String uname, String pwd){
 		this.uname= uname;
 		this.pwd=pwd;
@@ -37,15 +38,7 @@ public class DBconnect {
 			String url ="jdbc:mysql://localhost:3306/userpractice";
 			Connection connect = DriverManager.getConnection(url, uname, pwd);
 			Statement statement = connect.createStatement();
-			ResultSet result = statement.executeQuery(Tquery);
-			//Array Qresult = result;
-			while (result.next()) {
-				String Fo = "";
-				for (int i=1; i<=5;i++) {
-					Fo += result.getString(i)+ "\t\t";
-				}
-				System.out.println(Fo);
-			}
+			 result = statement.executeQuery(Tquery);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -54,6 +47,16 @@ public class DBconnect {
 	}
 	
 	public void display() {
-
+		try {
+			while (result.next()) {
+				String Fo = "";
+				for (int i=1; i<=7;i++) {
+					Fo += result.getString(i)+ "\t\t";
+				}
+				System.out.println(Fo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -19,6 +19,7 @@ public class dbManipulation {
 			System.out.println("Enter Query");
 				String Query = UInput.nextLine();
 			 conn.Query(Query);
+			 conn.display();
 				
 		
 		}
